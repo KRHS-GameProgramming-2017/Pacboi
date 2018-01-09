@@ -1,4 +1,5 @@
 import pygame, sys, math, random
+from Points import *
 
 pygame.init()
 
@@ -9,6 +10,9 @@ screen = pygame.display.set_mode(size)
 
 bgColor = [r, g, b] = [18, 5, 180]
 
+points = [Points("sb", [100, 100]),
+          Points("beat", [200, 200])]
+
 level = 1
 while True:
     for event in pygame.event.get():
@@ -16,5 +20,7 @@ while True:
             sys.exit()
             
     screen.fill(bgColor)
+    for p in points:
+        screen.blit(p.image, p.rect)
     pygame.display.flip()
     clock.tick(60)
