@@ -1,6 +1,7 @@
 import pygame, sys, math, random
 from Points import *
 from Pacboi import *
+from Opponents import *
 
 pygame.init()
 
@@ -46,5 +47,6 @@ while True:
     for p in points:
         screen.blit(p.image, p.rect)
     screen.blit(boi.image, boi.rect)
+    screen.blit(Opponent.image, Opponent.rect)
     pygame.display.flip()
     clock.tick(60)
