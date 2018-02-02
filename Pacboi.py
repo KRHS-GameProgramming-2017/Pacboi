@@ -2,7 +2,7 @@ import pygame, math
 
 class Pacboi():
     def __init__(self, screenSize):
-        self.images=[pygame.image.load("Pacboi\Pacboi Closed.png"),
+        self.images = [pygame.image.load("Pacboi\Pacboi Closed.png"),
                      pygame.image.load("Pacboi\Pacboi Open.png")]
         self.frame = 0
         self.maxFrame = len(self.images)-1

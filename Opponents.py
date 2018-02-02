@@ -2,10 +2,11 @@ import pygame, math
 
 class Opponent():
     def __init__(self, screenSize):
-        self.images=[pygame.image.load("Ghost.png")]
+        self.image = pygame.image.load("Ghost.png")
         self.maxSpeed = 6
         self.speed = [0,0]
         self.rect = self.image.get_rect()
+       
         
     def hitWall(self):
         width = self.screenSize[0]
@@ -18,6 +19,6 @@ class Opponent():
             self.speed[1]  = -self.speed[1]
             self.go()
             
-     def go(self):
-        self.box.move_ip(self.speed)
+    def go(self):
+        self.rect.move_ip(self.speed)
 
