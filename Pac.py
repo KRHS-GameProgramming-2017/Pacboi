@@ -16,6 +16,7 @@ points = [Points("sb", [100, 100]),
           Points("beat", [200, 200])]
 
 boi = Pacboi(size)
+ghost = Opponent(size)
 
 level = 1
 while True:
@@ -42,11 +43,14 @@ while True:
                 boi.go("stop right")
              
     boi.move()
+    boi.hitWall(size)
+    ghost.move()
+    ghost.hitWall(size)
             
     screen.fill(bgColor)
     for p in points:
         screen.blit(p.image, p.rect)
     screen.blit(boi.image, boi.rect)
-    screen.blit(Opponent.image, Opponent.rect)
+    screen.blit(ghost.image, ghost.rect)
     pygame.display.flip()
     clock.tick(60)
